@@ -1,0 +1,53 @@
+{include file='common/header' /}
+  <link href="__CSS__/common.css" rel="stylesheet">
+  <link href="__CSS__/article.css" rel="stylesheet">
+<div class="warp">
+  <div class="post-topheader">
+    <div class="container">
+      <form class="row" action="{:url('Index/Search/index')}" method="post">
+        <div class="col-md-9">
+          <input type="text" placeholder="输入关键字搜索" value="" name="keywork" class="input-lg form-control">
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">搜索</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="container mt20">
+
+    <div class="row">
+      <div class="col-md-9 main search-result">
+        <h3 class="h5 mt0">找到约 <strong>{$count}</strong> 条结果</h3>
+
+
+       {volist name="list" id="vo"}
+        <section>
+          <h2 class="h4">
+            <a target="_blank" href="#">{$vo.title}</a>
+            <span class="text-muted"></span>
+          </h2>
+          <p class="excerpt">{$vo.content|htmlspecialchars_decode}</p>
+        </section>
+        {/volist}
+
+        
+
+        <div class="text-center">
+         <!--  <ul class="pagination"><li class="active"><a href="javascript:void(0);">1</a></li><li><a href="/search?q=php&amp;type=activity&amp;page=2">2</a></li><li class="next"><a href="/search?q=php&amp;type=activity&amp;page=2" rel="next">下一页</a></li></ul> -->
+         {$page}
+        </div>
+      </div>
+      <div class="col-md-3 side">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+   {include file='common/footer' /}

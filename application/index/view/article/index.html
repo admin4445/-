@@ -1,0 +1,55 @@
+
+<link href="__CSS__/common.css" rel="stylesheet">
+<link href="__CSS__/article.css" rel="stylesheet">
+<div class="warp">
+    <div class="blog-header">
+      <div class="container">
+        <h1 class="blog-title">{$find.title}</h1>
+        <p class="blog-post-meta">{$find.pubtime|date='m',###}月{$find.pubtime|date='d',###}日 {$find.pubtime|date='H:i',###} by <a href="#">{$find.author}</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+           {$find.content|htmlspecialchars_decode}
+
+          </div>
+
+
+
+          <nav>
+            <ul class="pager">
+              {if condition="$prev neq ''"}
+              <li><a href="__DOMAIN__/index.php/index/Article/index/category/{$id}/cate/{$cate}/article/{$prev}">上一篇</a></li>
+              {/if}
+               {if condition="$next neq ''"}
+              <li><a href="__DOMAIN__/index.php/index/Article/index/category/{$id}/cate/{$cate}/article/{$next}">下一篇</a></li>
+                {/if}
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>推荐文章</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">网络专车能这么管吗？</a></li>
+              <li><a href="#">有些事情，罗永浩没有在发布会上告诉你</a></li>
+              <li><a href="#">离开索尼的 VAIO 要用什么产品走出日本</a></li>
+            </ol>
+          </div>
+
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+</div>
+
+
+
+
