@@ -1,5 +1,5 @@
 ## 未来科技
-## author kzb
+# author kzb
 ThinkPHP 5.0
 ===============
 
